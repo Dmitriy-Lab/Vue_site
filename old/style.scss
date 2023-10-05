@@ -1,0 +1,353 @@
+@import 'vars';
+@import 'mixins';
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    background-color: #fff;
+
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 60px;
+    @include pageSize();
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+
+    &__text {
+        @include textPropertys($siteColorBlack, DM Serif Display, 40px, normal, 400, 125%);
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 243px;
+
+    &__link {
+        text-decoration: none;
+        @include textPropertys($siteColorBlack, Jost, 20px, normal, 400, 125%);
+    }
+}
+
+.main {
+    aspect-ratio: 1200/758;
+    @include pageSize();
+    position: relative;
+
+    &__image {
+        border-radius: 50px;
+    }
+
+    &__content {
+        max-width: 435px;
+        position: absolute;
+        top:30%;
+        left: 4%;
+    }
+
+    &__header {
+        padding-bottom: 18px;
+        @include textPropertys($siteColorBlack, DM Serif Display, 65px, normal, 400, 125%);
+    }
+
+    &__subtitle {
+        letter-spacing: 0.22px;
+        padding-bottom: 21px;
+        @include textPropertys($siteColorGrey, Jost, 22px, normal, 400, 150%);
+    }
+
+    &__btn {
+        padding: 26px 48px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid $siteColorBlack;
+        border-radius: 18px;
+        letter-spacing: 0.36px;
+        @include textPropertys(#fff, Jost, 18px, normal, 600, 125%);
+        background-color: $siteColorBlack;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            color: $siteColorBlack;
+            background-color: #fff;
+        }
+    }
+}
+
+.gallery {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    @include pageSize();
+
+    &__title {
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+        @include textPropertys($siteColorBlack, DM Serif Display, 50px, normal, 400, 125%);
+    }
+
+    &__subtitle {
+        max-width: 737px;
+        text-align: center;
+        margin-bottom: 95px;
+        letter-spacing: 0.22px;
+        @include textPropertys($siteColorGrey, Jost, 22px, normal, 400, 150%);
+    }
+
+    &__cards {
+        display: flex;
+        gap: 56px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.card {
+    width: 547px;
+
+    &__image {
+        width: 547px;
+        aspect-ratio: 547/525;
+    }
+
+    &__content {
+        height: 95px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    &__info {
+        margin-top: 20px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        letter-spacing: 0.5px;
+        @include textPropertys($siteColorGrey, DM Serif Display, 25px, normal, 400, 125%);
+    }
+
+    &__text {
+        letter-spacing: 0.22px;
+        @include textPropertys($siteColorGrey, Jost, 22px, normal, 400, 150%);
+    }
+
+    &__link {
+        display: block;
+
+        & circle, & path {
+            transition: all 0.3s;
+        }
+
+        &:hover circle {
+            fill:#292F36;
+        }
+
+        &:hover path {
+            stroke:#F4F0EC;
+        }
+    }
+}
+
+.counters {
+    max-width: 100%;
+    background-color: #F4F0EC;
+    aspect-ratio: 1920/457;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        gap: 15px;
+        aspect-ratio: 100/16;
+        max-width: 1200px;
+    }
+
+    &__counter {
+        width: 205px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:not(:last-child) {
+            border-right: 1px solid $siteColorGold;
+        }
+    }
+
+    &__header {
+        margin-bottom: 10px;
+        letter-spacing: 1.7px;
+        @include textPropertys($siteColorGold, DM Serif Display, 85px, normal, 400, 125%);
+    }
+
+    &__text {
+        letter-spacing: 0.22px;
+        @include textPropertys($siteColorGrey, Jost, 22px, normal, 400, 150%);
+    }
+}
+
+.articles {
+    @include pageSize();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 95px;
+
+    &__title {
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        margin-top: 95px;
+        @include textPropertys($siteColorBlack, DM Serif Display, 50px, normal, 400, 125%);
+    }
+
+    &__subtitle {
+        margin-bottom: 52px;
+        max-width: 811px;
+        text-align: center;
+        letter-spacing: 0.22px;
+        @include textPropertys($siteColorGrey, Jost, 22px, normal, 400, 150%);
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 27px;
+    }
+}
+
+.article {
+    width: 340px;
+    border: 1px solid $greyLines;
+    border-radius: 62px;
+    padding: 20px;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #F4F0EC;
+    }
+
+    &:hover .article__link circle {
+        fill: #fff;
+    }
+
+    &__imageBox {
+        position: relative;
+        border-top-right-radius: 62px;
+        border-top-left-radius: 62px;
+        margin-bottom: 21px;
+    }
+
+    &__image {
+    border-top-right-radius: 62px;
+    border-top-left-radius: 62px;
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+        @include textPropertys($siteColorGrey, Jost, 16px, normal, 400, 150%);
+        display: block;
+        padding: 8px 11px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: #fff;
+    }
+
+    &__header {
+        max-width: 305px;
+        margin-bottom: 28px;
+        letter-spacing: 0.5px;
+        @include textPropertys($siteColorBlack, DM Serif Display, 25px, normal, 400, 125%);
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__date {
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+        @include textPropertys($siteColorGrey, Jost, 16px, normal, 400, 150%);
+    }
+
+    &__link {
+        display: block;
+
+        & circle {
+            transition: all 0.3s;
+        }
+    }
+}
+
+.footer {
+    @include pageSize();
+    height: 272px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    &__info {
+        max-width: 393px;
+    }
+
+    &__text {
+        margin-top: 18px;
+        letter-spacing: 0.22px;
+        @include textPropertys($siteColorGrey, Jost, 22px, normal, 400, 150%);
+    }
+
+    &__heading {
+        margin-bottom: 25px;
+        @include textPropertys($siteColorBlack, DM Serif Display, 25px, normal, 400, 125%);
+    }
+
+    &__contacts {
+        max-width: 258px;
+    }
+
+    &__socials {
+        margin-top: 31px;
+        display: flex;
+        gap: 30px;
+    }
+
+    &__social {
+        display: block;
+    }
+}
+
+.menu_footer {
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+}
