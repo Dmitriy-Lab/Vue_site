@@ -1,24 +1,6 @@
 # vue_site
 
-## Project setup
-```
-npm install
-```
+My first Vue-app
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Stack:
+Html, css, js, scss, vue, vuex, vue-router
